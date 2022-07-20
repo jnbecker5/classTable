@@ -2,43 +2,44 @@ import React, { Component } from "react";
 import { ClassTable } from "./ClassTable"
 import { ClassEditor } from "./ClassEditor";
 
+
 export class ClassDisplay extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             showEditor: false,
-            selectedProduct: null
+            selectedContent: null
         }
     }
-
-    startEditing = (product) => {
-        this.setState({ showEditor: true, selectedProduct: product })
+    startEditing = (content) => {
+        this.setState({ showEditor: true, selectedContent: content })
     }
 
-    createProduct = () => {
-        this.setState({ showEditor: true, selectedProduct: {} })
+    createcontent = () => {
+        this.setState({ showEditor: true, selectedContent: {} })
     }
 
     cancelEditing = () => {
-        this.setState({ showEditor: false, selectedProduct: null })
+        this.setState({ showEditor: false, selectedContent: null })
     }
 
-    saveClass = (product) => {
-        this.props.saveCallback(product);
-        this.setState({ showEditor: false, selectedProduct: null })        
+    saveClass = (content) => {
+        this.props.saveCallback(content);
+        this.setState({ showEditor: false, selectedContent: null })        
     }
 
     render() {
         if (this.state.showEditor) {
             return <ClassEditor 
-                key={ this.state.selectedProduct.id || -1 }
-                product={ this.state.selectedProduct } 
+                key={ this.state.selectedContent.id || -1 }
+                content={ this.state.selectedContent } 
                 saveCallback={ this.saveClass }
                 cancelCallback={ this.cancelEditing } />
         } else {
             return <div className="m-2">
-                <ClassTable products={ this.props.products }
+                <ClassTable 
+                    rowContent={ this.props.rowContent }
                     editCallback={ this.startEditing } />            
                       
             </div>

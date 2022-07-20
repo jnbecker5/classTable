@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ClassTableRow } from "./ClassTableRow";
-import { TableBanner } from "./TableBanner";
+import { ClassTableBanner} from "./ClassTableBanner"
 
 export class ClassTable extends Component {
 
@@ -8,13 +8,14 @@ export class ClassTable extends Component {
         return <table className="table table-sm table-striped table-bordered">
                 <thead>
                     <tr>
+                        
                     <th colSpan="7" className="bg-primary text-white text-center h4 p-2">
                     {
-                        this.props.products.map(c => 
-                            <TableBanner
-                                product={ c } 
+                        this.props.rowContent.map(c => 
+                            <ClassTableBanner
+                                content={ c } 
                                 key={ c.tableName }/>)
-                    }
+                    }<div>for {this.props.something}</div>
                     </th>
                     </tr>
                     <tr>
@@ -29,10 +30,10 @@ export class ClassTable extends Component {
                 </thead>
                 <tbody>
                     {
-                        this.props.products.map(p => 
+                        this.props.rowContent.map(r => 
                             <ClassTableRow
-                                product={ p } 
-                                key={ p.id }
+                                content={ r } 
+                                key={ r.id }
                                 editCallback={ this.props.editCallback } />)
                     }
                 </tbody>

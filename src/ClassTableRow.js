@@ -3,24 +3,23 @@ import React, { Component } from "react";
 export class ClassTableRow extends Component {
 
     render() {
-        let p = this.props.product;
-        return <tr>
-            <td>{ p.id }</td>
-            <td>{ p.description }</td>
-            <td>{ p.semester}</td>
-            <td>{ p.prefix }</td>
-            <td>{ p.number }</td>
-            <td>{ p.grade}</td>
-
+        let r = this.props.content;
+        return (
+        <tr className = "text-center">
+            <td>{ r.id }</td>
+            <td>{ r.description }</td>
+            <td>{ r.semester}</td>
+            <td>{ r.prefix }</td>
+            <td>{ r.number }</td>
+            <td>{ r.grade}</td>
             <td>
                 <div className="col-md-12 text-center">
                 <button className="text-center btn btn-sm btn-warning m-1"
-                    onClick={ () => this.props.editCallback(p) }>
+                    onClick={ () => this.props.editCallback(r) }>
                         Edit
                 </button>
-                </div>
-                  
+                </div>    
             </td>
-        </tr>
+        </tr>)
     }
 }

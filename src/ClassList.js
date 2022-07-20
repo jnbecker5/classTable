@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ClassDisplay } from './ClassDisplay';
+import { ClassTable } from './ClassTable';
 
 
 export default class ClassList extends Component {
@@ -34,10 +35,12 @@ export default class ClassList extends Component {
                 {id: 2, description: "Speaking2", semester: "", prefix: "", number: "", grade: ""},
                 {id: 3, description: "Speaking3", semester: "", prefix: "", number: "", grade: ""}
             ]
+        
         }
         this.enterName = this.enterName.bind(this);
         this.enterCredits = this.enterCredits.bind(this);
         this.idCounter = 100;
+
     }
     enterName ( n )  {
         console.log("name" + n);
@@ -74,6 +77,7 @@ export default class ClassList extends Component {
     }
 
     render() {
+
         return <div>
         <div style={{display: 'flex', justifyContent: 'center'}}>
             <div>        
@@ -89,51 +93,55 @@ export default class ClassList extends Component {
                 type="number"
                 value={this.state.age}
                 onChange={this.enterCredits} />
+                
             </div>
         </div>
 
         <h5 className="bg-primary text-white text-center m-2 p-2">
             Hello, {this.state.name}! <br/>
+            
             You need additional {120-this.state.credits} credit(s) to graduate.
         </h5>
+        
             <div>
+
                 {this.state.credits >= 70 && 
                 <ClassDisplay 
                     name="Writing"
-                    products={ this.state.writing }
-                    saveCallback={ p => this.saveData("products", p) } />
+                    rowContent={ this.state.writing }
+                    saveCallback={ r => this.saveData("writing", r) } />
                 }
                 {this.state.credits < 70 &&
                     this.state.credits >= 40 && 
                         <ClassDisplay 
                             name="Writing"
-                            products={ this.state.writing1 }
-                            saveCallback={ p => this.saveData("products1", p) } />
+                            rowContent={ this.state.writing1 }
+                            saveCallback={ r => this.saveData("writing1", r) } />
                 }
                 {this.state.credits < 40 && 
                 <ClassDisplay 
                     name="Writing"
-                    products={ this.state.writing2 }
-                    saveCallback={ p => this.saveData("products2", p) } />
+                    rowContent={ this.state.writing2 }
+                    saveCallback={ r => this.saveData("writing2", r) } />
                 }
                 {this.state.credits >= 70 && 
                 <ClassDisplay 
                     name = "Speaking"
-                    products={ this.state.speaking }
-                    saveCallback={ p => this.saveData("speaking", p) } />
+                    rowContent={ this.state.speaking }
+                    saveCallback={ r => this.saveData("speaking", r) } />
                 }
                 {this.state.credits < 70 &&
                     this.state.credits >= 40 && 
                         <ClassDisplay 
                             name="Speaking"
-                            products={ this.state.speaking1 }
-                            saveCallback={ p => this.saveData("speaking1", p) } />
+                            rowContent={ this.state.speaking1 }
+                            saveCallback={ r => this.saveData("speaking1", r) } />
                 }
                 {this.state.credits < 40 && 
                 <ClassDisplay 
                     name="Speaking"
-                    products={ this.state.speaking2 }
-                    saveCallback={ p => this.saveData("speaking2", p) } />
+                    rowContent={ this.state.speaking2 }
+                    saveCallback={ r => this.saveData("speaking2", r) } />
                 }
             </div>
         </div>
