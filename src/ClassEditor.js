@@ -16,6 +16,7 @@ export class ClassEditor extends Component {
                 editing: props.product.editing || ""
             }
         }
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleChange = (ev) => {
