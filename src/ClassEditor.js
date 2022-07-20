@@ -6,6 +6,7 @@ export class ClassEditor extends Component {
         super(props);
         this.state = {
             formData: {
+                tableName: props.product.tableName || "",
                 id: props.product.id || "",
                 description: props.product.description || "", 
                 semester: props.product.semester || "", 
@@ -28,6 +29,13 @@ export class ClassEditor extends Component {
 
     render() {
         return <div className="m-2">
+            <div className="form-group">
+                <label>Class Type</label>
+                <input className="form-control" name="tableName"
+                    disabled
+                    value={ this.state.formData.tableName }
+                    onChange={ this.handleChange } />
+            </div>
             <div className="form-group">
                 <label>ID</label>
                 <input className="form-control" name="id"
@@ -66,7 +74,8 @@ export class ClassEditor extends Component {
                     onChange={ this.handleChange } />
             </div>                                      
             <div className="text-center">
-                <button className="btn btn-primary m-1" onClick={ this.handleClick }>
+                <button className="btn btn-primary m-1" 
+                        onClick={ this.handleClick }>
                     Save
                 </button>
                 <button className="btn btn-secondary" 
