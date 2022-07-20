@@ -9,11 +9,11 @@ export class ClassTable extends Component {
                 <thead>
                     <tr>
                     <th colSpan="7" className="bg-primary text-white text-center h4 p-2">
-                     {
+                    {
                         this.props.products.map(c => 
                             <TableBanner
                                 product={ c } 
-                                key={ c.tn }/>)
+                                key={ c.tableName }/>)
                     }
                     </th>
                     </tr>

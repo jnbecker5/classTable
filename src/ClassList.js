@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { TableBanner } from './TableBanner';
 import { ClassDisplay } from './ClassDisplay';
 
 
@@ -12,26 +11,26 @@ export default class ClassList extends Component {
             name: "",
             credits: 0,
             writing: [
-                {id: 1, description: "Writing1", semester: "", prefix: "", number: "", grade: ""}
+                {id: 1, description: "Writing1", semester: "", prefix: "", number: "", grade: "", tableName: "Writing Emphasis"}
             ],
             writing1: [
-                {id: 1, description: "Writing1", semester: "", prefix: "", number: "", grade: ""},
+                {id: 1, description: "Writing1", semester: "", prefix: "", number: "", grade: "", tableName: "Writing Emphasis"},
                 {id: 2, description: "Writing2", semester: "", prefix: "", number: "", grade: ""}
             ],
             writing2: [
-                {id: 1, description: "Writing1", semester: "", prefix: "", number: "", grade: ""},
+                {id: 1, description: "Writing1", semester: "", prefix: "", number: "", grade: "", tableName: "Writing Emphasis"},
                 {id: 2, description: "Writing2", semester: "", prefix: "", number: "", grade: ""},
                 {id: 3, description: "Writing3", semester: "", prefix: "", number: "", grade: ""}
             ],
             speaking: [
-                {id: 1, description: "Speaking1", semester: "", prefix: "", number: "", grade: ""}
+                {id: 1, description: "Speaking1", semester: "", prefix: "", number: "", grade: "", tableName: "Speaking Emphasis"}
             ],
             speaking1: [
-                {id: 1, description: "Speaking1", semester: "", prefix: "", number: "", grade: ""},
+                {id: 1, description: "Speaking1", semester: "", prefix: "", number: "", grade: "", tableName: "Speaking Emphasis"},
                 {id: 2, description: "Speaking2", semester: "", prefix: "", number: "", grade: ""}
             ],
             speaking2: [
-                {id: 1, description: "Speaking1", semester: "", prefix: "", number: "", grade: ""},
+                {id: 1, description: "Speaking1", semester: "", prefix: "", number: "", grade: "", tableName: "Speaking Emphasis"},
                 {id: 2, description: "Speaking2", semester: "", prefix: "", number: "", grade: ""},
                 {id: 3, description: "Speaking3", semester: "", prefix: "", number: "", grade: ""}
             ]

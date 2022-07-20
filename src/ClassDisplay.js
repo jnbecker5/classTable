@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { ClassTable } from "./ClassTable"
 import { ClassEditor } from "./ClassEditor";
-import { TableBanner } from "./TableBanner";
 
 export class ClassDisplay extends Component {
 
